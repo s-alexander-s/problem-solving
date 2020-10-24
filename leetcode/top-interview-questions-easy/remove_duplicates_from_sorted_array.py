@@ -18,6 +18,12 @@ class Test(TestCase):
         self.assertEqual(4, n)
         self.assertListEqual([1, 2, 3, 4], nums)
 
+    def test_remove_results_to_one_element(self):
+        nums = [1, 1, 1]
+        n = self.s.removeDuplicates(nums)
+        self.assertEqual(1, n)
+        self.assertListEqual([1], nums)
+
     def test_removes_multiple_duplicates(self):
         nums = [1, 2, 2, 3, 4, 4]
         n = self.s.removeDuplicates(nums)
