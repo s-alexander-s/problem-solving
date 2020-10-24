@@ -5,7 +5,21 @@ from unittest import TestCase
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        pass
+        if not nums:
+            return 0
+
+        i = 0
+        j = 1
+        while j < len(nums):
+            if nums[j] == nums[i]:
+                j += 1
+            else:
+                i += 1
+                nums[i] = nums[j]
+                j += 1
+
+        del nums[i + 1:]
+        return i + 1
 
 
 class Test(TestCase):
